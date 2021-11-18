@@ -1,10 +1,12 @@
 //VARIABLES
 var searchBtn = document.getElementsByClassName("searchBtn");
-var city = document.getElementsByClassName("userInput");
-var requestUrl =
-  `api.openweathermap.org/data/2.5/forecast?q=` +
-  city.value +
-  `&appid=4c4bcf68ece59c4349091a9dded4ab01`;
+
+var myKey = "aa2cf9999a020baafc7c25b8f844ea9c"
+var city = document.getElementsByClassName('userInput');
+var requestUrl = `api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${myKey}`;
+
+
+
 getLocal();
 /* function fetchApi(city) {
   fetch(requestUrl)
@@ -17,11 +19,11 @@ getLocal();
     });
 } */
 //FUNCTIONS
-/* function cityInput(event) {
+function cityInput(event) {
   event.preventDefault();
   var userCity = city.value;
 }
- */
+
 function getLocal() {
   var retrieve = localStorage.getItem("Cities-Searched");
   if (retrieve === null) {

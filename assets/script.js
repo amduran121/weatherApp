@@ -1,43 +1,37 @@
 //VARIABLES
-var searchBtn = document.getElementsByClassName("searchBtn");
-
-var myKey = "aa2cf9999a020baafc7c25b8f844ea9c"
-var city = document.getElementsByClassName('userInput');
-var requestUrl = `api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${myKey}`;
-
-
-
-getLocal();
-/* function fetchApi(city) {
+var searchBtn = document.querySelector(“.searchBtn”);
+/* var myKey = c89a29a2eb4fd0383a0dac22a0a8e52c";
+var city = document.getElementsByClassName(“userInput”);
+var requestUrl = `api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${myKey}`; */
+function fetchApi() {
+  var myKey = "c89a29a2eb4fd0383a0dac22a0a8e52c";
+  var city = document.querySelector(“.userInput”);
+  var userInput = city.value;
+  var requestUrl = `https://api.openweathermap.org/data/2.5/forecast/?q=${userInput}&appid=${myKey}`;
   fetch(requestUrl)
     .then(function (response) {
-      return response.json();
-      console.log(data);
+      var data = response.json();
+      return data;
     })
     .then(function (data) {
-      //api data being pulled
+      localStorage.setItem(userInput, JSON.stringify(data));
     });
-} */
-//FUNCTIONS
-function cityInput(event) {
-  event.preventDefault();
-  var userCity = city.value;
 }
-
-function getLocal() {
-  var retrieve = localStorage.getItem("Cities-Searched");
+/* function getLocal() {
+  var retrieve = localStorage.getItem(userInput);
   if (retrieve === null) {
     return [];
   }
   return JSON.parse(retrieve);
-}
+} */
 //EVENT LISTENERS
 document
-  .querySelector(".searchBtn")
-  .addEventListener("click", function (event) {
-    var citySearch = city.value;
+  .querySelector(“.searchBtn”)
+  .addEventListener(“click”, function (event) {
+    /*     var citySearch = city.value;
     var previousSearches = getLocal();
     previousSearches.push(citySearch);
-    localStorage.setItem("Cities-Searched", JSON.stringify(previousSearches));
-    fetchApi(requestUrl);
+    localStorage.setItem(“Cities-Searched”, JSON.stringify(previousSearches));
+    fetchApi(requestUrl); */
+    fetchApi();
   });

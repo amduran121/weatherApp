@@ -1,11 +1,11 @@
 //VARIABLES
-var searchBtn = document.querySelector(“.searchBtn”);
+var searchBtn = document.querySelector('.searchBtn');
 /* var myKey = c89a29a2eb4fd0383a0dac22a0a8e52c";
 var city = document.getElementsByClassName(“userInput”);
 var requestUrl = `api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${myKey}`; */
 function fetchApi() {
   var myKey = "c89a29a2eb4fd0383a0dac22a0a8e52c";
-  var city = document.querySelector(“.userInput”);
+  var city = document.querySelector('.userInput');
   var userInput = city.value;
   var requestUrl = `https://api.openweathermap.org/data/2.5/forecast/?q=${userInput}&appid=${myKey}`;
   fetch(requestUrl)
@@ -26,8 +26,8 @@ function fetchApi() {
 } */
 //EVENT LISTENERS
 document
-  .querySelector(“.searchBtn”)
-  .addEventListener(“click”, function (event) {
+  .querySelector('.searchBtn')
+  .addEventListener('click', function (event) {
     /*     var citySearch = city.value;
     var previousSearches = getLocal();
     previousSearches.push(citySearch);

@@ -30,7 +30,7 @@ var months = [
   "Dec",
 ];
 
-var API_KEY = "aa2cf9999a020baafc7c25b8f844ea9c";
+var API_KEY = "c89a29a2eb4fd0383a0dac22a0a8e52c";
 
 setInterval(() => {
   var time = new Date();
@@ -59,7 +59,7 @@ function getWeatherData() {
     let { latitude, longitude } = success.coords;
 
     fetch(
-      `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely&units=metric&appid=${API_KEY}`
+      `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely&units=imperial&appid=${API_KEY}`
     )
       .then((res) => res.json())
       .then((data) => {

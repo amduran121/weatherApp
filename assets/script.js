@@ -30,7 +30,7 @@ var months = [
   "Dec",
 ];
 
-var API_KEY = "c89a29a2eb4fd0383a0dac22a0a8e52c";
+var API_KEY = "aa2cf9999a020baafc7c25b8f844ea9c";
 
 setInterval(() => {
   var time = new Date();
